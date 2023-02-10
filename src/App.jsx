@@ -1,5 +1,9 @@
 import styles from "./style";
-import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero } from "./components";
+import { FoodSystems, Business, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero, Restoration } from "./components";
+import WardResourceCenter from "./components/WardResourceCenter";
+import WasteManagement from "./components/WasteManagement";
+import ResponsibleConsumption from "./components/ResponsibleConsumption";
+import Sanitation from "./components/Sanitation";
 
 const App = () => (
   <div className="bg-primary w-full overflow-hidden">
@@ -19,8 +23,12 @@ const App = () => (
       <div className={`${styles.boxWidth}`}>
         <Stats />
         <Business />
-        <Billing />
-        <CardDeal />
+        <FoodSystems />
+        <WardResourceCenter/>
+        <WasteManagement/>
+        <ResponsibleConsumption/>
+        <Sanitation/>
+        <Restoration />
         <Testimonials />
         <Clients />
         <CTA />

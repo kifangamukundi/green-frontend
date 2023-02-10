@@ -1,5 +1,10 @@
+import waste from "./waste.png";
+import resource from "./resource.png";
+import food from "./food.png";
+import comsumption from "./comsumption.png";
+import sanitation  from "./sanitation.png";
+import restoration  from "./restoration.png";
 import airbnb from "./airbnb.png";
-import bill from "./bill.png";
 import binance from "./binance.png";
 import card from "./card.png";
 import coinbase from "./coinbase.png";
@@ -26,7 +31,12 @@ import people03 from "./people03.png";
 
 export {
   airbnb,
-  bill,
+  waste,
+  resource,
+  food,
+  comsumption,
+  sanitation,
+  restoration,
   binance,
   card,
   coinbase,

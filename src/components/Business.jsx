@@ -22,13 +22,15 @@ const Business = () =>  (
   <section id="features" className={layout.section}>
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
-        You do the business, <br className="sm:block hidden" /> we’ll handle
-        the money.
+        What is, <br className="sm:block hidden" /> Green Villages International.
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-        With the right credit card, you can improve your financial life by
-        building credit, earning rewards and saving money. But with hundreds
-        of credit cards on the market.
+      Green Villages International (GreVillas Int’l) is a Community Based Organization (CBO) 
+      formed on 20th Jan 2019 but registered in Jan 2020. It covers Ikolomani 
+      sub-county in Kakamega County. It is a non-political and non-religious group 
+      whose main objective is to improve livelihoods in the community through 
+      sustainable utilization of natural resources and provision of regenerative agriculture
+       and other socio- economic services to all households in the target sub-county.
       </p>
 
       <Button styles={`mt-10`} />

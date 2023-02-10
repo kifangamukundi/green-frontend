@@ -23,23 +23,23 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "Rewards",
+    title: "Vision",
     content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+      "To be the leading socio-economic and environmental solution provider in Kakamega County and beyond.",
   },
   {
     id: "feature-2",
     icon: shield,
-    title: "100% Secured",
+    title: "Mission",
     content:
-      "We take proactive steps make sure your information and transactions are secure.",
+      "To improve household productivity through enhancing capacity of On-farm and non-farm ecosystems service providers (occupations/trades).",
   },
   {
     id: "feature-3",
     icon: send,
-    title: "Balance Transfer",
+    title: "Goal",
     content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+      "Our main goal facilitate community led emergence of green villages where prosperous healthy families live in harmony with the natural environment.",
   },
 ];
 
