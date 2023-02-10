@@ -4,6 +4,11 @@ import food from "./food.png";
 import comsumption from "./comsumption.png";
 import sanitation  from "./sanitation.png";
 import restoration  from "./restoration.png";
+import catchment  from "./catchment.png";
+import south  from "./south.png";
+import east  from "./east.png";
+import north  from "./north.png";
+import central  from "./central.png";
 import airbnb from "./airbnb.png";
 import binance from "./binance.png";
 import card from "./card.png";
@@ -37,6 +42,11 @@ export {
   comsumption,
   sanitation,
   restoration,
+  catchment,
+  south,
+  east,
+  north,
+  central,
   binance,
   card,
   coinbase,
