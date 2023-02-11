@@ -19,13 +19,13 @@ const Home = () => (
         <Clients />
         <FoodSystems />
         <WardResourceCenter/>
+        <Catchment />
         <WasteManagement/>
         <ResponsibleConsumption/>
-        <Sanitation/>
         <Restoration />
-        <Catchment />
-        <Testimonials />
-        <CTA />
+        <Sanitation/>
+        
+        
     </div>
 
   </div>

@@ -1,5 +1,8 @@
-import { apple, resource, google } from "../assets";
+import {  resource } from "../assets";
 import styles, { layout } from "../style";
+
+import {Link} from "react-router-dom";
+import Button from "./Button";
 
 const WardResourceCenter = () => (
   <section id="product" className={layout.sectionReverse}>
@@ -22,8 +25,9 @@ const WardResourceCenter = () => (
       </p>
 
       <div className="flex flex-row flex-wrap sm:mt-10 mt-6">
-        <img src={apple} alt="google_play" className="w-[128.86px] h-[42.05px] object-contain mr-5 cursor-pointer" />
-        <img src={google} alt="google_play" className="w-[144.17px] h-[43.08px] object-contain cursor-pointer" />
+      <Link to={`/resource-center-management`}>
+        <Button styles={`mt-10`} />
+      </Link>
       </div>
     </div>
   </section>

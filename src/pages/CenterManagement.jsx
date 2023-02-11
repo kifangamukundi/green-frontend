@@ -69,6 +69,9 @@ const CenterManagement = () => (
         <p className={`${styles.paragraph} mt-5`}>
         The team will:
         </p>
+        
+
+
 
         {/* Points */}
         <section id="features" className={layout.section}>

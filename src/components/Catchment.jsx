@@ -1,6 +1,8 @@
 import { catchment } from "../assets";
 import styles, { layout } from "../style";
 import Button from "./Button";
+
+import {Link} from "react-router-dom";
  
 
 const Catchment  = () => (
@@ -13,7 +15,9 @@ const Catchment  = () => (
       This will consist of not less than respected elders within the catchment and will oversee activities of the Habitat Catchment Restoration & Regenerative farming Committee.
       </p>
 
-      <Button styles={`mt-10`} />
+      <Link to={`/habitat-catchment-council`}>
+        <Button styles={`mt-10`} />
+      </Link>
     </div>
 
     <div className={layout.sectionImg}>

@@ -1,5 +1,6 @@
 import { restoration } from "../assets";
 import styles, { layout } from "../style";
+import {Link} from "react-router-dom";
 import Button from "./Button";
  
 
@@ -13,7 +14,9 @@ const Restoration = () => (
       The committee that will implement the integrated community empowerment program with the beneficiary households.
       </p>
 
-      <Button styles={`mt-10`} />
+      <Link to={`/restoration-and-regenerative-farming`}>
+        <Button styles={`mt-10`} />
+      </Link>
     </div>
 
     <div className={layout.sectionImg}>
