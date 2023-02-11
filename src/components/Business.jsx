@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 import { features } from "../constants";
 import styles, { layout } from "../style";
 import Button from "./Button";
@@ -32,8 +33,9 @@ const Business = () =>  (
       sustainable utilization of natural resources and provision of regenerative agriculture
        and other socio- economic services to all households in the target sub-county.
       </p>
-
-      <Button styles={`mt-10`} />
+      <Link to={`/about`}>
+        <Button styles={`mt-10`} />
+      </Link>
     </div>
 
     <div className={`${layout.sectionImg} flex-col`}>

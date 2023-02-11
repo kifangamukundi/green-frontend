@@ -1,39 +1,30 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styles from "./style";
-import { Catchment, Sanitation, ResponsibleConsumption, WasteManagement, WardResourceCenter, FoodSystems, Business, Clients, CTA, Footer, Navbar, Stats, Testimonials, Hero, Restoration } from "./components";
+import { Navbar, Footer } from "./components";
+import { Home, About, TechnicalCommittee, CenterManagement } from "./pages";
 
 const App = () => (
-  <div className="bg-primary w-full overflow-hidden">
-    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth}`}>
-        <Navbar />
+  <BrowserRouter>
+    <div className="bg-primary w-full overflow-hidden">
+      <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Navbar />
+        </div>
+      </div>
+      
+      <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/technical-committee" element={<TechnicalCommittee />} />
+            <Route path="/resource-center-management" element={<CenterManagement />} />
+          </Routes>
+          <Footer />
+        </div>
       </div>
     </div>
-
-    <div className={`bg-primary ${styles.flexStart}`}>
-      <div className={`${styles.boxWidth}`}>
-        <Hero />
-      </div>
-    </div>
-    
-    <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
-      <div className={`${styles.boxWidth}`}>
-        <Stats />
-        <Business />
-        <Clients />
-        <FoodSystems />
-        <WardResourceCenter/>
-        <WasteManagement/>
-        <ResponsibleConsumption/>
-        <Sanitation/>
-        <Restoration />
-        <Catchment />
-        <Testimonials />
-        <Clients />
-        <CTA />
-        <Footer />
-      </div>
-    </div>
-  </div>
+  </BrowserRouter>
 );
 
 export default App;

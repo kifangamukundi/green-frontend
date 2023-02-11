@@ -1,21 +1,25 @@
-import { central, north, east, south, people01, people02, people03, facebook, instagram, linkedin, twitter, airbnb, binance, coinbase, dropbox, send, shield, star  } from "../assets";
+import { central, north, east, south, people01, people02, people03, facebook, instagram, linkedin, twitter, send, shield, star  } from "../assets";
 
 export const navLinks = [
   {
     id: "home",
     title: "Home",
+    link: "/"
   },
   {
     id: "features",
-    title: "Features",
+    title: "About Us",
+    link: "/about"
   },
   {
     id: "product",
-    title: "Product",
+    title: "Service Providers",
+    link: "/service-providers"
   },
   {
     id: "clients",
-    title: "Clients",
+    title: "Become a Partner",
+    link: "/become-a-partner"
   },
 ];
 
@@ -93,62 +97,88 @@ export const footerLinks = [
     title: "Useful Links",
     links: [
       {
-        name: "Content",
-        link: "https://www.hoobank.com/content/",
+        name: "Recommended Foods by FAO",
+        link: "/foods",
       },
       {
-        name: "How it Works",
-        link: "https://www.hoobank.com/how-it-works/",
+        name: "Service Providers",
+        link: "/service-providers",
       },
       {
-        name: "Create",
-        link: "https://www.hoobank.com/create/",
+        name: "Ward Committees",
+        link: "/ward-committee",
       },
       {
-        name: "Explore",
-        link: "https://www.hoobank.com/explore/",
+        name: "SUSREF Committee",
+        link: "/SUSREF-committee",
       },
       {
-        name: "Terms & Services",
-        link: "https://www.hoobank.com/terms-and-services/",
-      },
-    ],
-  },
-  {
-    title: "Community",
-    links: [
-      {
-        name: "Help Center",
-        link: "https://www.hoobank.com/help-center/",
+        name: "Marketing committee",
+        link: "/marketing-committee",
       },
       {
-        name: "Partners",
-        link: "https://www.hoobank.com/partners/",
+        name: "Food safety Committee",
+        link: "/food-safety-committee",
+      },
+      
+      {
+        name: "Community of engagement",
+        link: "/community-engagement",
       },
       {
-        name: "Suggestions",
-        link: "https://www.hoobank.com/suggestions/",
-      },
-      {
-        name: "Blog",
-        link: "https://www.hoobank.com/blog/",
-      },
-      {
-        name: "Newsletters",
-        link: "https://www.hoobank.com/newsletters/",
+        name: "Shianabunga Habitat Restoration",
+        link: "/shianabunga-habitat-restoration",
       },
     ],
   },
   {
-    title: "Partner",
+    title: "Empowerment structures",
     links: [
       {
-        name: "Our Partner",
-        link: "https://www.hoobank.com/our-partner/",
+        name: "Technical Committee",
+        link: "/technical-committee",
+      },
+      {
+        name: "Resource Centre Management",
+        link: "/resource-center-management",
+      },
+      {
+        name: "Waste Management",
+        link: "/waste-management",
+      },
+      {
+        name: "Responsible Consumption",
+        link: "/responsible-consumption",
+      },
+      {
+        name: "Sanitation and food safety",
+        link: "/sanitation-and-food-safety",
+      },
+      {
+        name: "Restoration & Regenerative farming",
+        link: "restoration-and-regenerative-farming",
+      },
+      {
+        name: "Habitat Catchment Council",
+        link: "habitat-catchment-council",
+      },
+    ],
+  },
+  
+  {
+    title: "Others",
+    links: [
+      {
+        name: "Privacy Policy",
+        link: "/privacy-policy",
+      },
+      {
+        name: "Terms of Use",
+        link: "/terms-of-use",
       },
       {
         name: "Become a Partner",
-        link: "https://www.hoobank.com/become-a-partner/",
+        link: "/become-a-partner",
       },
     ],
   },
@@ -158,22 +188,22 @@ export const socialMedia = [
   {
     id: "social-media-1",
     icon: instagram,
-    link: "https://www.instagram.com/",
+    link: "#",
   },
   {
     id: "social-media-2",
     icon: facebook,
-    link: "https://www.facebook.com/",
+    link: "#",
   },
   {
     id: "social-media-3",
     icon: twitter,
-    link: "https://www.twitter.com/",
+    link: "#",
   },
   {
     id: "social-media-4",
     icon: linkedin,
-    link: "https://www.linkedin.com/",
+    link: "#",
   },
 ];
 
