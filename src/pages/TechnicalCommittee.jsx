@@ -42,12 +42,12 @@ const points = [
 ];
 
 const ListPoints = ({ icon, content, index }) => (
-  <div className={`flex flex-col p-6 rounded-[20px] w-1/2 ${index !== points.length - 1 ? "mb-6" : "mb-0"} feature-card`}>
+  <div className={`flex flex-col p-6 rounded-[20px] w-1/2 ${index !== points.length - 1 ? "mb-6" : "mb-0"}`}>
     <div className={`w-[64px] h-[64px] rounded-full ${styles.flexCenter} bg-dimBlue`}>
       <img src={icon} alt="star" className="w-[50%] h-[50%] object-contain" />
     </div>
     <div className="flex-1 flex flex-col ml-3">
-      <p className="font-poppins font-normal text-dimWhite text-[16px] leading-[24px]">
+      <p className="font-sans font-normal text-green-900 text-[16px] leading-[24px]">
         {content}
       </p>
     </div>

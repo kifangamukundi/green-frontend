@@ -35,7 +35,7 @@ const ListPoints = ({ icon, content, index }) => (
       <img src={icon} alt="star" className="w-[50%] h-[50%] object-contain" />
     </div>
     <div className="flex-1 flex flex-col ml-3">
-      <p className="font-poppins font-normal text-dimWhite text-[16px] leading-[24px]">
+      <p className="font-sans font-normal text-green-900 text-[16px] leading-[24px]">
         {content}
       </p>
     </div>
