@@ -11,8 +11,46 @@ module.exports = {
         dimBlue: "rgba(9, 151, 124, 0.1)",
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        sans: ["Sans", "sans-serif"],
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            'h1, h2': {
+              color: theme('colors.emerald.700'),
+              fontWeight: 'bold',
+              fontFamily: theme('fontFamily.serif').join(", ")
+            },
+            'p': {
+              marginTop: "1.25rem",
+              color: "#1F2937",
+              fontFamily: {
+                sans: ["Sans", "sans-serif"],
+              },
+              fontSize: "1rem",
+              lineHeight: "1.5rem",
+              lineHeight: "1.625",
+            },
+            'ul, ol': {
+              color: "#111827",
+              justifyContent: "center",
+              width: "24rem",
+              borderWidth: "1px",
+              borderColor: "#E5E7EB",
+
+            },
+            'li': {
+              paddingTop: "0.5rem",
+              paddingBottom: "0.5rem",
+              paddingLeft: "1.5rem",
+              paddingRight: "1.5rem",
+              width: "100%",
+              borderBottomWidth: "1px",
+              borderColor: "#E5E7EB",
+            }
+          },
+        },
+      }),
     },
     screens: {
       xs: "480px",
@@ -24,6 +62,6 @@ module.exports = {
     },
   },
   plugins: [
-    
+    require('@tailwindcss/typography'),
   ],
 };
