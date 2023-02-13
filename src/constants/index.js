@@ -1,4 +1,4 @@
-import { central, north, east, south, people01, people02, people03, facebook, instagram, linkedin, twitter, send, shield, star  } from "../assets";
+import { waste, resource, sanitation, restoration, comsumption, food, catchment, central, north, east, south, people01, people02, people03, facebook, instagram, linkedin, twitter, send, shield, star  } from "../assets";
 
 export const navLinks = [
   {
@@ -223,5 +223,57 @@ export const clients = [
   {
     id: "client-4",
     logo: central,
+  },
+];
+
+export const services = [
+  {
+    id: "service-1",
+    title: "Habitat Catchment Council of Elders",
+    content: "This will consist of not less than respected elders within the catchment and will oversee activities of the Habitat Catchment Restoration & Regenerative farming Committee.",
+    image: catchment,
+    url: "/habitat-catchment-council"
+  },
+  {
+    id: "service-2",
+    title: "Sub County and Ward Sustainable Resilient Food Systems Technical Committee",
+    content: "The aim is to ensure buy-in of the approach, identify committed and credible persons within the community and of course clearance to freely engage with the community.",
+    image: food,
+    url: "/technical-committee"
+  },
+  {
+    id: "service-3",
+    title: "Responsible Consumption",
+    content: "This committee will have the responsibility of promoting production of all these food groups at household level, followed by nutrition education which will combine both sensitizations on the need to consume healthy diets as well as setting up learning centers for preparation of healthy diets using locally produced foods.",
+    image: comsumption,
+    url: "/responsible-consumption"
+  },
+  {
+    id: "service-4",
+    title: "Habitat catchment Restoration & Regenerative farming Committee",
+    content: "The committee that will implement the integrated community empowerment program with the beneficiary households.",
+    image: restoration,
+    url: "/restoration-and-regenerative-farming"
+  },
+  {
+    id: "service-5",
+    title: "Sanitation and food safety",
+    content: "The dream of having all households access safe drinking water is achievable for many parts of Kenya due to abundance of natural springs and permanent rivers.",
+    image: sanitation,
+    url: "/sanitation-and-food-safety"
+  },
+  {
+    id: "service-6",
+    title: "Ward Resource Centre Management Team",
+    content: "The team will be responsible for overall leadership, planning and implementation of the ward ecosystem restoration and regenerative farming practices road map.",
+    image: resource,
+    url: "/resource-center-management"
+  },
+  {
+    id: "service-7",
+    title: "Waste Management",
+    content: "Organic waste which we shall be concerned with organic wastes derived from food wastes, food remains after processing and crop residues.",
+    image: waste,
+    url: "/waste-management"
   },
 ];

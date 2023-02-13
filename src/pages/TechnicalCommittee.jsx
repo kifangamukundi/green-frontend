@@ -83,14 +83,13 @@ const TechnicalCommittee = () => (
         
         {/* Points */}
         <section id="features" className={layout.section}>
-          <div className={`${layout.sectionImg} flex-wrap items-center`}>
+          <div className={`${layout.sectionImg} flex flex-col sm:flex-row sm:flex-wrap justify-center items-center`}>
             {points.map((feature, index) => (
               <ListPoints key={feature.id} {...feature} index={index} />
             ))}
           </div>
         </section>
-
-
+        
     </div>
 
   </div>

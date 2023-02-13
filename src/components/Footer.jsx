@@ -12,7 +12,7 @@ const Footer = () => (
           alt="hoobank"
           className="w-[266px] h-[72.14px] object-contain"
         />
-        <p className={`${styles.paragraph} mt-4 max-w-[312px]`}>
+        <p className={`font-poppins font-normal text-white text-[18px] leading-[30.8px] mt-4 max-w-[312px]`}>
           Restore, Protect and Conserve our Resources both on-farm and in the natural habitats.
         </p>
       </div>
