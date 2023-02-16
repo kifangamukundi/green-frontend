@@ -7,7 +7,10 @@ export default defineConfig({
   plugins: [
     Markdown(),
     react({
-      include: [/\.jsx$/, /\.md$/], // <-- add .md 
+      include: [/\.jsx$/, /\.tsx$/,  /\.md$/], // <-- add .md 
     }),
   ],
+  // define: {
+  //   "global": {},
+  // },
 })

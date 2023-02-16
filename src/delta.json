@@ -1,0 +1,79 @@
+{
+    "ops": [
+        {
+            "insert": "This is sample heading"
+        },
+        {
+            "attributes": {
+                "header": 1
+            },
+            "insert": "\n"
+        },
+        {
+            "insert": "I woke up early today to finish up on some of the critical projects that are due.\nThe strategy am going to use is that am testing only"
+        },
+        {
+            "attributes": {
+                "header": 2
+            },
+            "insert": "\n"
+        },
+        {
+            "insert": "this is nice come on work and present the result "
+        },
+        {
+            "attributes": {
+                "bold": true
+            },
+            "insert": "accordingly "
+        },
+        {
+            "insert": "and you will be in a much better position than the rest of the developers in the same area of expertise.\ndo the right thing"
+        },
+        {
+            "attributes": {
+                "list": "ordered"
+            },
+            "insert": "\n"
+        },
+        {
+            "insert": "do the "
+        },
+        {
+            "attributes": {
+                "italic": true
+            },
+            "insert": "other "
+        },
+        {
+            "insert": "thing"
+        },
+        {
+            "attributes": {
+                "list": "ordered"
+            },
+            "insert": "\n"
+        },
+        {
+            "insert": "repeat the process"
+        },
+        {
+            "attributes": {
+                "list": "ordered"
+            },
+            "insert": "\n"
+        },
+        {
+            "attributes": {
+                "underline": true
+            },
+            "insert": "always be learning new stuff"
+        },
+        {
+            "attributes": {
+                "list": "ordered"
+            },
+            "insert": "\n"
+        }
+    ]
+}

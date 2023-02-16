@@ -1,12 +1,23 @@
-import { useState } from "react";
+import React, { useContext, useState } from "react";
 import {Link} from "react-router-dom";
 
+import { Store } from '../Store';
 import { close, logo, menu } from "../assets";
 import { navLinks } from "../constants";
 
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
+
+//   Original
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { userInfo } = state;
+
+const signoutHandler = () => {
+  ctxDispatch({ type: 'USER_SIGNOUT' });
+  localStorage.removeItem('userInfo');
+  window.location.href = '/login';
+};
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
@@ -18,7 +29,7 @@ const Navbar = () => {
         {navLinks.map((nav, index) => (
           <li
             key={nav.id}
-            className={`font-poppins font-normal cursor-pointer text-[16px] ${
+            className={`font-sans font-normal cursor-pointer text-[16px] ${
               active === nav.title ? "text-white" : "text-dimWhite"
             } ${index === navLinks.length - 1 ? "mr-0" : "mr-10"}`}
             onClick={() => setActive(nav.title)}
@@ -26,6 +37,31 @@ const Navbar = () => {
             <Link to={`${nav.link}`}>{nav.title}</Link>
           </li>
         ))}
+        {userInfo && userInfo.isAdmin && (
+          <li className={`font-sans font-normal cursor-pointer text-[16px] text-white ml-10`}>
+            <Link
+              to="/dashboard"
+            >
+              Dashboard
+            </Link>
+          </li>
+        )}
+         {userInfo ? (
+            <li className={`font-sans font-normal cursor-pointer text-[16px] text-white ml-10`}>
+              <Link
+                to="#signout"
+                onClick={signoutHandler}
+              >
+                Sign Out
+              </Link>
+            </li>
+          ) : (
+            <li className={`font-sans font-normal cursor-pointer text-[16px] text-white ml-10`}>
+            <Link to="/login">
+                  Sign In
+            </Link>
+            </li>
+          )}
       </ul>
 
       <div className="sm:hidden flex flex-1 justify-end items-center">
