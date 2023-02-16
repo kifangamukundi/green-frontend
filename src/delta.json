@@ -1,79 +1,142 @@
 {
-    "ops": [
+    "type": "doc",
+    "content": [
         {
-            "insert": "This is sample heading"
-        },
-        {
-            "attributes": {
-                "header": 1
+            "type": "heading",
+            "attrs": {
+                "level": 2
             },
-            "insert": "\n"
+            "content": [
+                {
+                    "type": "text",
+                    "text": "This is the heading"
+                }
+            ]
         },
         {
-            "insert": "I woke up early today to finish up on some of the critical projects that are due.\nThe strategy am going to use is that am testing only"
-        },
-        {
-            "attributes": {
-                "header": 2
+            "type": "orderedList",
+            "attrs": {
+                "start": 1
             },
-            "insert": "\n"
-        },
-        {
-            "insert": "this is nice come on work and present the result "
-        },
-        {
-            "attributes": {
-                "bold": true
-            },
-            "insert": "accordingly "
-        },
-        {
-            "insert": "and you will be in a much better position than the rest of the developers in the same area of expertise.\ndo the right thing"
-        },
-        {
-            "attributes": {
-                "list": "ordered"
-            },
-            "insert": "\n"
-        },
-        {
-            "insert": "do the "
-        },
-        {
-            "attributes": {
-                "italic": true
-            },
-            "insert": "other "
-        },
-        {
-            "insert": "thing"
-        },
-        {
-            "attributes": {
-                "list": "ordered"
-            },
-            "insert": "\n"
-        },
-        {
-            "insert": "repeat the process"
-        },
-        {
-            "attributes": {
-                "list": "ordered"
-            },
-            "insert": "\n"
-        },
-        {
-            "attributes": {
-                "underline": true
-            },
-            "insert": "always be learning new stuff"
-        },
-        {
-            "attributes": {
-                "list": "ordered"
-            },
-            "insert": "\n"
+            "content": [
+                {
+                    "type": "listItem",
+                    "content": [
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "marks": [
+                                        {
+                                            "type": "underline"
+                                        }
+                                    ],
+                                    "text": "This is so cool am loving this editor and am glad I invested the whole night to make this happen and am so happy about it."
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "listItem",
+                    "content": [
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "This is so cool am loving this editor and am glad I invested the whole night to make this happen and am so happy about it"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "listItem",
+                    "content": [
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "This is so cool am loving this editor and am glad I invested the whole night to make this happen and am so happy about it"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "listItem",
+                    "content": [
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "This is so cool am loving this editor and am glad I invested the whole night to make this happen and am so happy about it"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "listItem",
+                    "content": [
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "This is so cool am loving this editor and am glad I invested the whole night to make this happen and am so happy about it"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "listItem",
+                    "content": [
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "This is so cool am loving this editor and am glad I invested the whole night to make this happen and am so happy about it"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "listItem",
+                    "content": [
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "This is so cool am loving this editor and am glad I invested the whole night to make this happen and am so happy about it"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "listItem",
+                    "content": [
+                        {
+                            "type": "paragraph",
+                            "content": [
+                                {
+                                    "type": "text",
+                                    "text": "This is so cool am loving this editor and am glad I invested the whole night to make this happen and am so happy about it"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

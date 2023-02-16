@@ -1,18 +1,22 @@
 import { useEditor, EditorContent } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
-import Underline from "@tiptap/extension-underline";
 import {
   FaBold,
+  FaCode,
   FaHeading,
+  FaHighlighter,
   FaItalic,
   FaListOl,
   FaListUl,
+  FaParagraph,
   FaQuoteLeft,
   FaRedo,
   FaStrikethrough,
   FaUnderline,
   FaUndo,
 } from "react-icons/fa";
+import Underline from "@tiptap/extension-underline";
+import Highlight from "@tiptap/extension-highlight";
 
 
 const MenuBar = ({ editor }) => {
@@ -29,6 +33,7 @@ const MenuBar = ({ editor }) => {
         >
           <FaBold />
         </button>
+
         <button
           onClick={() => editor.chain().focus().toggleItalic().run()}
           className={editor.isActive("italic") ? "is_active" : ""}
@@ -47,6 +52,17 @@ const MenuBar = ({ editor }) => {
         >
           <FaStrikethrough />
         </button>
+        
+        <button
+          onClick={() =>
+            editor.chain().focus().toggleHeading({ level: 1 }).run()
+          }
+          className={
+            editor.isActive("heading", { level: 1 }) ? "is_active" : ""
+          }
+        >
+          <FaHeading className="heading3" />
+        </button>
         <button
           onClick={() =>
             editor.chain().focus().toggleHeading({ level: 2 }).run()
@@ -55,7 +71,7 @@ const MenuBar = ({ editor }) => {
             editor.isActive("heading", { level: 2 }) ? "is_active" : ""
           }
         >
-          <FaHeading />
+          <FaHeading className="heading3" />
         </button>
         <button
           onClick={() =>
@@ -67,6 +83,7 @@ const MenuBar = ({ editor }) => {
         >
           <FaHeading className="heading3" />
         </button>
+
         <button
           onClick={() => editor.chain().focus().toggleBulletList().run()}
           className={editor.isActive("bulletList") ? "is_active" : ""}
@@ -85,6 +102,31 @@ const MenuBar = ({ editor }) => {
         >
           <FaQuoteLeft />
         </button>
+
+        {/* new stuff */}
+        <button
+          onClick={() => editor.chain().focus().toggleCode().run()}
+          className={editor.isActive("codeBlock") ? "is_active" : ""}
+        >
+          <FaCode/>
+        </button>
+        <button
+         onClick={() => editor.chain().focus().toggleCode().run()}
+         className={editor.isActive("paragraph") ? "is_active" : ""}
+        >
+          <FaParagraph />
+        </button>
+        
+      <button
+        onClick={() => editor.chain().focus().toggleHighlight({ color: '#8ce99a' }).run()}
+        className={editor.isActive('highlight', { color: '#8ce99a' }) ? 'is-active' : ''}
+      >
+        <FaHighlighter/>
+      </button>
+      
+      
+    
+
       </div>
       <div>
         <button onClick={() => editor.chain().focus().undo().run()}>
@@ -99,8 +141,13 @@ const MenuBar = ({ editor }) => {
 };
 
 export const Tiptap = ({ setDescription }) => {
+  const limit = 280
   const editor = useEditor({
-    extensions: [StarterKit, Underline],
+    extensions: [
+      StarterKit, 
+      Underline, 
+      Highlight.configure({multicolor: true}),
+    ],
     content: ``,
 
     onUpdate: ({ editor }) => {

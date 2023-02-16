@@ -489,6 +489,11 @@
   resolved "https://registry.yarnpkg.com/@tiptap/extension-heading/-/extension-heading-2.0.0-beta.217.tgz#0fc0f2a4974e2b31c890463798d75c5d0f20d384"
   integrity sha512-v7G/1R0+qmPm0U2sOCOftqZef5yd89tEg1R+KVF78ucFvuLgH50Pldes8lhHEBlfoRShye2Ht54E6JHDP73J5w==
 
+"@tiptap/extension-highlight@^2.0.0-beta.217":
+  version "2.0.0-beta.217"
+  resolved "https://registry.yarnpkg.com/@tiptap/extension-highlight/-/extension-highlight-2.0.0-beta.217.tgz#366230aa0e6a26ad7c0baf6bdcac026474f2b5c4"
+  integrity sha512-JS+WJQrMOUfOAeNazi3FioaQ78MsuakMcZmSdy+tZuv3zwPhLPDZzlVj+K4wZtzPejxlucpE93BiW2FmJDyNgg==
+
 "@tiptap/extension-history@^2.0.0-beta.217":
   version "2.0.0-beta.217"
   resolved "https://registry.yarnpkg.com/@tiptap/extension-history/-/extension-history-2.0.0-beta.217.tgz#1bbe8ecc7bfc6384a12091b4b0b4433789b3d1a2"
@@ -533,6 +538,13 @@
   version "2.0.0-beta.217"
   resolved "https://registry.yarnpkg.com/@tiptap/extension-underline/-/extension-underline-2.0.0-beta.217.tgz#11b986b6a27daa4d0840f1d7dca3678e854de98f"
   integrity sha512-feakmZ8ek1maf4yBVd539AYIjv3hnLK1j/GLyT/SjRlwOryQb23xWIQ8I+nF5UWqXib1MkvfMe6Ff6zK5WqrYQ==
+
+"@tiptap/html@^2.0.0-beta.217":
+  version "2.0.0-beta.217"
+  resolved "https://registry.yarnpkg.com/@tiptap/html/-/html-2.0.0-beta.217.tgz#b71dcadd844e3a42f7330a83a009c5f514692e92"
+  integrity sha512-VCnkmMdhluVZ+WLFUQdptJPdjXUMq9uh9VBSCCZnysOZP7AIkLIJT7+S52RT58K3TLNwbiZNUGbPwEjJwP1OMw==
+  dependencies:
+    zeed-dom "^0.9.19"
 
 "@tiptap/pm@^2.0.0-beta.217":
   version "2.0.0-beta.217"
@@ -821,6 +833,11 @@ crelt@^1.0.0:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/crelt/-/crelt-1.0.5.tgz#57c0d52af8c859e354bace1883eb2e1eb182bb94"
   integrity sha512-+BO9wPPi+DWTDcNYhr/W90myha8ptzftZT+LwcmUbbok0rcP/fequmFYCw8NMoH7pkAZQzU78b3kYrlua5a9eA==
+
+css-what@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/css-what/-/css-what-6.1.0.tgz#fb5effcf76f1ddea2c81bdfaa4de44e79bac70f4"
+  integrity sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==
 
 cssesc@^3.0.0:
   version "3.0.0"
@@ -2013,3 +2030,10 @@ yaml@^1.10.2:
   version "1.10.2"
   resolved "https://registry.npmjs.org/yaml/-/yaml-1.10.2.tgz"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
+
+zeed-dom@^0.9.19:
+  version "0.9.26"
+  resolved "https://registry.yarnpkg.com/zeed-dom/-/zeed-dom-0.9.26.tgz#f0127d1024b34a1233a321bd6d0275b3ba998b30"
+  integrity sha512-HWjX8rA3Y/RI32zby3KIN1D+mgskce+She4K7kRyyx62OiVxJ5FnYm8vWq0YVAja3Tf2S1M0XAc6O2lRFcMgcQ==
+  dependencies:
+    css-what "^6.1.0"

@@ -13,6 +13,7 @@ import Tools from "./tools/Tools";
 import Settings from "./settings/Settings";
 import Partners from "./partners/Partners";
 import Pages from "./pages/Pages";
+import JsonToHtml from "./structures/JsonToHtml";
 
 
 
@@ -32,4 +33,5 @@ export {
     Settings,
     Partners,
     Pages,
+    JsonToHtml,
 };
