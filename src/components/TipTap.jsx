@@ -140,7 +140,7 @@ const MenuBar = ({ editor }) => {
   );
 };
 
-export const Tiptap = ({ setDescription }) => {
+export const Tiptap = ({ setContent }) => {
   const limit = 280
   const editor = useEditor({
     extensions: [
@@ -151,10 +151,9 @@ export const Tiptap = ({ setDescription }) => {
     content: ``,
 
     onUpdate: ({ editor }) => {
-      const html = editor.getHTML();
-      setDescription(html);
-      // testing
-      console.log(editor.getJSON());
+      // const html = editor.getHTML();
+      const json = editor.getJSON();
+      setContent(json);
     },
   });
 

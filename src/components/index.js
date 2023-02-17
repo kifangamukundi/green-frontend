@@ -8,6 +8,8 @@ import Testimonials from "./Testimonials";
 import Hero from "./Hero";
 import Tiptap from "./TipTap";
 import TipTapPreview from "./TipTapPreview";
+import LoadingSpinner from "./LoadingSpinner";
+import MessageInformation from "./MessageInformation";
 
 export {
   Navbar,
@@ -20,4 +22,6 @@ export {
   Hero,
   Tiptap,
   TipTapPreview,
+  LoadingSpinner,
+  MessageInformation,
 };

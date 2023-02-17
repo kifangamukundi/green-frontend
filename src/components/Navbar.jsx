@@ -40,7 +40,7 @@ const signoutHandler = () => {
         {userInfo && userInfo.isAdmin && (
           <li className={`font-sans font-normal cursor-pointer text-[16px] text-white ml-10`}>
             <Link
-              to="/dashboard"
+              to="/manage/dashboard"
             >
               Dashboard
             </Link>

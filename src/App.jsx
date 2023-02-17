@@ -3,7 +3,22 @@ import styles from "./style";
 import { Navbar, Footer } from "./components";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Register, Example, Home, About, TechnicalCommittee, CenterManagement, Login, Dashboard, Structures, Committees, Tools, Settings, Partners, Pages, CreateStructure, JsonToHtml } from "./pages";
+import { Register, 
+        Example, 
+        Home, 
+        About, 
+        TechnicalCommittee, 
+        CenterManagement, 
+        Login, 
+        Dashboard, 
+        Structures, 
+        Committees, 
+        Tools, 
+        Settings, 
+        Partners, 
+        Pages, 
+        CreateStructure,
+        ViewStructure } from "./pages";
 import ProtectedRoute from "./security/protectedRoute";
 
 const App = () => (
@@ -23,15 +38,15 @@ const App = () => (
             <Route path="/technical-committee" element={<TechnicalCommittee />} />
             <Route path="/resource-center-management" element={<CenterManagement />} />
             <Route path="/example" element={<Example />} />
-            <Route path="/test/json" element={<JsonToHtml />} />
 
             {/* Dynamic */}
             <Route path="/register" element={<Register/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/structure/:slug" element={<ViewStructure/>} />
 
             {/* Protected */}
             <Route
-              path="/dashboard"
+              path="/manage/dashboard"
               element={
                 <ProtectedRoute>
                   <Dashboard />

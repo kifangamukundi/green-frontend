@@ -1,9 +1,9 @@
 import parse from "html-react-parser";
 
-const TipTapPreview = ({ description }) => {
+const TipTapPreview = ({ content }) => {
   return (
     <>
-      <div className="ProseMirror">{parse(description)}</div>
+      <div className="ProseMirror">{parse(content)}</div>
     </>
   );
 };

@@ -13,7 +13,7 @@ import Tools from "./tools/Tools";
 import Settings from "./settings/Settings";
 import Partners from "./partners/Partners";
 import Pages from "./pages/Pages";
-import JsonToHtml from "./structures/JsonToHtml";
+import ViewStructure from "./structures/ViewStructure";
 
 
 
@@ -33,5 +33,5 @@ export {
     Settings,
     Partners,
     Pages,
-    JsonToHtml,
+    ViewStructure,
 };
