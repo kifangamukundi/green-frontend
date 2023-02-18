@@ -37,7 +37,7 @@ const signoutHandler = () => {
             <Link to={`${nav.link}`}>{nav.title}</Link>
           </li>
         ))}
-        {userInfo && userInfo.isAdmin && (
+        {userInfo?.user && userInfo?.user?.isAdmin && (
           <li className={`font-sans font-normal cursor-pointer text-[16px] text-white ml-10`}>
             <Link
               to="/manage/dashboard"
@@ -46,7 +46,7 @@ const signoutHandler = () => {
             </Link>
           </li>
         )}
-         {userInfo ? (
+         {userInfo?.user?.token ? (
             <li className={`font-sans font-normal cursor-pointer text-[16px] text-white ml-10`}>
               <Link
                 to="#signout"

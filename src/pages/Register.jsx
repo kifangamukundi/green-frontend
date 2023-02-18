@@ -1,10 +1,12 @@
 import React, { useContext, useReducer,useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError, BASE_URL } from '../utils.jsx';
+import { LoadingSpinner, MessageInformation } from '../components';
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -37,7 +39,7 @@ export default function Register() {
     
       const { state, dispatch: ctxDispatch } = useContext(Store);
 
-      const { userInfo } = state;
+      const { userTempInfo } = state;
 
       const submitHandler = async (e) => {
           e.preventDefault();
@@ -54,27 +56,47 @@ export default function Register() {
 
           ctxDispatch({ type: 'USER_SIGNIN', payload: data });
 
-          localStorage.setItem('userInfo', JSON.stringify(data));
+          localStorage.setItem('userTempInfo', JSON.stringify(data));
 
-          dispatch({ type: 'SIGNUP_SUCCESS' });
+          dispatch({ type: 'SIGNUP_SUCCESS', payload: data });
 
-          toast.success('Register Successful');
+          toast.success(data.message);
 
-          navigate(redirect || '/');
+          navigate(redirect || '/welcome');
 
         } catch (err) {
+          dispatch({ type: 'SIGNUP_FAIL', payload: getError(err), });
           toast.error(getError(err));
         }
       };
   
       useEffect(() => {
-          if (userInfo) {
+          if (userTempInfo) {
           navigate(redirect);
           }
-      }, [navigate, redirect, userInfo]);
+      }, [navigate, redirect, userTempInfo]);
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container w-full md:max-w-3xl mx-auto pt-20">
+        <Helmet>
+            <title>{ `Register` }</title>
+            <meta name="description" content={`Register`}></meta>
+        </Helmet>
+
+        {signUpStatus ? (
+          <LoadingSpinner/>
+        ) : error ? (
+          <MessageInformation>{error}</MessageInformation>
+        ) : (
+        <div className="max-w-md mx-auto">
+          <div className="w-full md:w-1/2 mb-4 md:pr-2">
+            <h1 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+              Create An Account
+            </h1>
+          </div>
+        </div>
+        )}
+
         <form className="max-w-md mx-auto" onSubmit={submitHandler}>
         <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2" htmlFor="firstName">

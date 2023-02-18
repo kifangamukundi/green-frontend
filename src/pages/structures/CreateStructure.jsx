@@ -65,7 +65,7 @@ export default function CreateStructure() {
           content,
         },
         {
-          headers: { Authorization: `Bearer ${userInfo.token}` },
+          headers: { Authorization: `Bearer ${userInfo.user.token}` },
         }
       );
       dispatch({ type: 'CREATE_SUCCESS', payload: data });
@@ -184,7 +184,7 @@ export default function CreateStructure() {
         </div>
 
         <div className="mb-4">
-            <button className={`bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded ${loadingCreate ? "disabled" : " "}`} type="submit" >
+            <button disabled={loadingCreate} className={`bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded ${loadingCreate ? 'opacity-50 cursor-not-allowed' : ''}`} type="submit" >
                 Create
             </button>
         </div>

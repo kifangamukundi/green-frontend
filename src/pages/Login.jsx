@@ -1,11 +1,13 @@
 import React, { useContext, useReducer, useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Axios from 'axios';
+import { Helmet } from 'react-helmet-async';
 
 import { Store } from '../Store';
 import { toast } from 'react-toastify';
 
 import { getError, BASE_URL } from '../utils';
+import { LoadingSpinner, MessageInformation } from '../components';
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -47,15 +49,17 @@ export default function Login() {
             ctxDispatch({ type: 'USER_SIGNIN', payload: data });
 
             localStorage.setItem('userInfo', JSON.stringify(data));
+            localStorage.removeItem('userTempInfo');
             
-            dispatch({ type: 'SIGN_SUCCESS' });
+            dispatch({ type: 'SIGN_SUCCESS', payload: data });
 
-            toast.success('Login Successful');
+            toast.success(data.message);
 
             navigate(redirect || '/');
 
          } catch (err) {
-          toast.error("Something went wrong");
+          dispatch({ type: 'SIGN_FAIL', payload: getError(err), });
+          toast.error(getError(err));
         }
     };
 
@@ -66,10 +70,28 @@ export default function Login() {
     }, [navigate, redirect, userInfo]);
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container w-full md:max-w-3xl mx-auto pt-20">
+        <Helmet>
+            <title>{ `Login` }</title>
+            <meta name="description" content={`Login`}></meta>
+        </Helmet>
+
+        {loginStatus ? (
+          <LoadingSpinner/>
+        ) : error ? (
+          <MessageInformation>{error}</MessageInformation>
+        ) : (
+        <div className="max-w-md mx-auto">
+          <div className="w-full md:w-1/2 mb-4 md:pr-2">
+            <h1 className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+              Login to your account
+            </h1>
+          </div>
+        </div>
+        )}
+
         <form className="max-w-md mx-auto" onSubmit={submitHandler}>
         
-
         <div className="mb-4">
             <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
                 Email Address
