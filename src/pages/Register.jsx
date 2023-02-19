@@ -13,7 +13,7 @@ const reducer = (state, action) => {
       case 'SIGNUP_REQUEST':
         return { ...state, signUpStatus: true };
       case 'SIGNUP_SUCCESS':
-        return { ...state, signUpStatus: false };
+        return { ...state, signUpStatus: false, user: action.payload.user };
       case 'SIGNUP_FAIL':
         return { ...state, signUpStatus: false, error: action.payload };
       default:
@@ -25,7 +25,7 @@ export default function Register() {
     const navigate = useNavigate();
     const { search } = useLocation();
     const redirectInUrl = new URLSearchParams(search).get('redirect');
-    const redirect = redirectInUrl ? redirectInUrl : '/';
+    const redirect = redirectInUrl ? redirectInUrl : '/welcome';
 
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -37,7 +37,7 @@ export default function Register() {
         error: '',
       });
     
-      const { state, dispatch: ctxDispatch } = useContext(Store);
+      const { state } = useContext(Store);
 
       const { userTempInfo } = state;
 
@@ -54,27 +54,18 @@ export default function Register() {
               password,
           });
 
-          ctxDispatch({ type: 'USER_SIGNIN', payload: data });
-
-          localStorage.setItem('userTempInfo', JSON.stringify(data));
+          dispatch({ type: 'USER_SIGNIN', payload: data });
 
           dispatch({ type: 'SIGNUP_SUCCESS', payload: data });
 
           toast.success(data.message);
 
-          navigate(redirect || '/welcome');
+          navigate(redirect || '/');
 
         } catch (err) {
           dispatch({ type: 'SIGNUP_FAIL', payload: getError(err), });
-          toast.error(getError(err));
         }
       };
-  
-      useEffect(() => {
-          if (userTempInfo) {
-          navigate(redirect);
-          }
-      }, [navigate, redirect, userTempInfo]);
 
   return (
     <div className="container w-full md:max-w-3xl mx-auto pt-20">

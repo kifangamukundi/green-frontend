@@ -154,6 +154,7 @@ export const Tiptap = ({ setContent }) => {
       // const html = editor.getHTML();
       const json = editor.getJSON();
       setContent(json);
+      console.log(json)
     },
   });
 

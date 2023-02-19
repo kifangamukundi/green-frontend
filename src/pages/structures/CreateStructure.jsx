@@ -48,7 +48,7 @@ export default function CreateStructure() {
   const [summary, setSummary] = useState('');
   const [image, setImage] = useState('');
   const [images, setImages] = useState([]);
-  const [content, setContent] = useState("");
+  const [content, setContent] = useState({});
 
   const createHandler = async (e) => {
     e.preventDefault();
@@ -73,7 +73,7 @@ export default function CreateStructure() {
       navigate('/manage/structures');
     } catch (err) {
       dispatch({ type: 'CREATE_FAIL', payload: getError(err), });
-      toast.error(getError(err));
+      console.log(err)
     }
   };
   return (
@@ -192,6 +192,9 @@ export default function CreateStructure() {
 
       {/* preview */}
       {/* <TipTapPreview content={content} /> */}
+
+      {/* testing */}
+      {/* {error.length > 0 && <MessageInformation>{error}</MessageInformation>} */}
       
     </div>
   )

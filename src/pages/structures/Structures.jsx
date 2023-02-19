@@ -54,7 +54,7 @@ export default function Structures() {
             try {
             const { data } = await axios.get(
                 `${BASE_URL}/structures`, {
-                headers: { Authorization: `Bearer ${userInfo.token}` },
+                headers: { Authorization: `Bearer ${userInfo.user.token}` },
                 });
             dispatch({ type: 'FETCH_SUCCESS', payload: data });
             toast.success(data.message);
@@ -63,7 +63,6 @@ export default function Structures() {
                 type: 'FETCH_FAIL',
                 payload: getError(err),
               });
-              toast.error(getError(err));
             }
         };
         if (successDelete) {
@@ -71,14 +70,14 @@ export default function Structures() {
         } else {
             fetchData();
         }
-        }, [successDelete, error]);
+        }, [successDelete]);
 
     const deleteHandler = async (structure) => {
         if (window.confirm('Are you sure you want to delete?')) {
             try {
             dispatch({ type: 'DELETE_REQUEST' });
             const {data} = await axios.delete(`${BASE_URL}/structures/${structure._id}`, {
-                headers: { Authorization: `Bearer ${userInfo.token}` },
+                headers: { Authorization: `Bearer ${userInfo.user.token}` },
             });
             dispatch({ type: 'DELETE_SUCCESS', payload: data });
             toast.success(data.message);
@@ -87,7 +86,6 @@ export default function Structures() {
                   type: 'DELETE_FAIL',
                   payload: getError(error),
               });
-              toast.error(getError(error));
             }
         }
         };

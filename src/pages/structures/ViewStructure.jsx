@@ -17,7 +17,7 @@ const reducer = (state, action) => {
       case 'FETCH_SUCCESS':
         return {
           ...state,
-          structure: action.payload,
+          structure: action.payload.structure,
           loading: false,
         };
       case 'FETCH_FAIL':
@@ -63,11 +63,11 @@ export default function Structures() {
                     type: 'FETCH_FAIL',
                     payload: getError(err),
                 });
-                toast.error(getError(err));
+                console.log(err)
             }
         };
         fetchData();
-        }, [error]);
+        }, []);
 
     const output = useMemo(() => {
         return generateHTML(json, [
@@ -78,8 +78,8 @@ export default function Structures() {
   return (
     <div className="container w-full md:max-w-3xl mx-auto pt-20">
         <Helmet>
-            <title>{ `${ structure?.structure?.title }` }</title>
-            <meta name="description" content={`${structure?.structure?.summary}`}></meta>
+            <title>{ `${ structure?.title }` }</title>
+            <meta name="description" content={`${structure?.summary}`}></meta>
         </Helmet>
 
       {loading ? (
@@ -93,7 +93,7 @@ export default function Structures() {
 
             <div className="w-full mb-4">
                 <h1 className={styles.heading3}>
-                    {structure?.structure?.title}
+                    {structure?.title}
                 </h1>
             </div>
 

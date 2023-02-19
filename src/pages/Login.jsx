@@ -14,7 +14,7 @@ const reducer = (state, action) => {
       case 'SIGN_REQUEST':
         return { ...state, loginStatus: true };
       case 'SIGN_SUCCESS':
-        return { ...state, loginStatus: false };
+        return { ...state, loginStatus: false, user: action.payload.user };
       case 'SIGN_FAIL':
         return { ...state, loginStatus: false, error: action.payload };
       default:
@@ -49,7 +49,6 @@ export default function Login() {
             ctxDispatch({ type: 'USER_SIGNIN', payload: data });
 
             localStorage.setItem('userInfo', JSON.stringify(data));
-            localStorage.removeItem('userTempInfo');
             
             dispatch({ type: 'SIGN_SUCCESS', payload: data });
 
@@ -59,7 +58,6 @@ export default function Login() {
 
          } catch (err) {
           dispatch({ type: 'SIGN_FAIL', payload: getError(err), });
-          toast.error(getError(err));
         }
     };
 
