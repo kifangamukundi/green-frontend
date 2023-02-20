@@ -4,6 +4,8 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { generateHTML } from '@tiptap/html';
 import StarterKit from '@tiptap/starter-kit';
+import Underline from "@tiptap/extension-underline";
+import Highlight from "@tiptap/extension-highlight";
 import { Helmet } from 'react-helmet-async';
 
 import { getError, BASE_URL } from '../../utils';
@@ -63,7 +65,6 @@ export default function Structures() {
                     type: 'FETCH_FAIL',
                     payload: getError(err),
                 });
-                console.log(err)
             }
         };
         fetchData();
@@ -72,6 +73,8 @@ export default function Structures() {
     const output = useMemo(() => {
         return generateHTML(json, [
             StarterKit,
+            Underline,
+            Highlight.configure({multicolor: true}),
         ])
         }, [json])
 
@@ -99,7 +102,9 @@ export default function Structures() {
 
           </div>
 
-          <div className="prose prose-stone">
+          <div 
+          className="prose md:prose-lg lg:prose-xl"
+          >
             <div dangerouslySetInnerHTML={{ __html: output }} />
           </div>
           

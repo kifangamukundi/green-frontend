@@ -97,6 +97,7 @@ export default function CreateStructure() {
 
           <div className="w-full md:w-1/2 mb-4 md:pr-2">
               <div className="flex flex-wrap">
+
                   <div className="w-full md:w-1/2 mb-4 md:pr-2">
                       <Link to={"/manage/structures"}>
                           <button className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
@@ -104,6 +105,7 @@ export default function CreateStructure() {
                           </button>
                       </Link>
                   </div>
+
                   <div className="w-full md:w-1/2 mb-4 md:pr-2">
                       <Link to={"/manage/structures/create"}>
                           <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
@@ -111,13 +113,14 @@ export default function CreateStructure() {
                           </button>
                       </Link>
                   </div>
+
               </div>
           </div>
 
         </div>
       )}
 
-      <form className="flex flex-wrap" onSubmit={createHandler}>
+      <form className="flex flex-wrap">
 
         <div className="w-full md:w-1/2 mb-4 md:pr-2">
           <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="title">
@@ -176,20 +179,20 @@ export default function CreateStructure() {
           </div>
         </div>
 
-        <div className="w-full mb-4">
-          <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="content">
-            Structure Content
-          </label>
-          <Tiptap setContent={setContent} />
-        </div>
-
-        <div className="mb-4">
-            <button disabled={loadingCreate} className={`bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded ${loadingCreate ? 'opacity-50 cursor-not-allowed' : ''}`} type="submit" >
-                Create
-            </button>
-        </div>
       </form>
 
+      <div className="w-full mb-4">
+        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="content">
+          Structure Content
+        </label>
+        <Tiptap setContent={setContent} />
+      </div>
+
+      <div className="mb-4">
+          <button onClick={createHandler} disabled={loadingCreate} className={`bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded ${loadingCreate ? 'opacity-50 cursor-not-allowed' : ''}`} type="button" >
+              Create
+          </button>
+      </div>
       {/* preview */}
       {/* <TipTapPreview content={content} /> */}
 
