@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { StoreProvider } from './Store';
+// changed store to Store.jsx
 import App from './App';
 import './index.css';
 
