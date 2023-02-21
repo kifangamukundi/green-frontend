@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet-async';
 import { Store } from '../../Store';
 import { getError, BASE_URL } from '../../utils';
 import { LoadingSpinner, MessageInformation, Tiptap, TipTapPreview } from '../../components';
+import useAxios from '../../security/useAxios';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -34,6 +35,8 @@ const reducer = (state, action) => {
 export default function CreateStructure() {
   const navigate = useNavigate();
 
+  const { axiosInstance, accessToken, refreshToken, setAccessToken, setRefreshToken } = useAxios();
+
   const { state } = useContext(Store);
   const { userInfo } = state;
 
@@ -54,7 +57,7 @@ export default function CreateStructure() {
     e.preventDefault();
     try {
       dispatch({ type: 'CREATE_REQUEST' });
-      const {data} = await axios.post(
+      const {data} = await axiosInstance.post(
         `${BASE_URL}/structures`,
         {
           title,
@@ -65,7 +68,7 @@ export default function CreateStructure() {
           content,
         },
         {
-          headers: { Authorization: `Bearer ${userInfo.user.token}` },
+          headers: { Authorization: `Bearer ${accessToken}` },
         }
       );
       dispatch({ type: 'CREATE_SUCCESS', payload: data });

@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import {Link} from "react-router-dom";
+import jwt_decode from "jwt-decode";
 
 import { Store } from '../Store';
 import { close, logo, menu } from "../assets";
@@ -12,6 +13,8 @@ const Navbar = () => {
 //   Original
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
+
+  const decodedUser = userInfo ? jwt_decode(userInfo.user.accessToken) : null;
 
 const signoutHandler = () => {
   ctxDispatch({ type: 'USER_SIGNOUT' });
@@ -37,7 +40,7 @@ const signoutHandler = () => {
             <Link to={`${nav.link}`}>{nav.title}</Link>
           </li>
         ))}
-        {userInfo?.user && userInfo?.user?.isAdmin && (
+        {userInfo?.user?.accessToken && decodedUser?.isAdmin && (
           <li className={`font-sans font-normal cursor-pointer text-[16px] text-white ml-10`}>
             <Link
               to="/manage/dashboard"
@@ -46,7 +49,7 @@ const signoutHandler = () => {
             </Link>
           </li>
         )}
-         {userInfo?.user?.token ? (
+         {userInfo?.user?.accessToken ? (
             <li className={`font-sans font-normal cursor-pointer text-[16px] text-white ml-10`}>
               <Link
                 to="#signout"

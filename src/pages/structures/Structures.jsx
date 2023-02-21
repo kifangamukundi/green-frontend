@@ -4,9 +4,11 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { Helmet } from 'react-helmet-async';
 
+
 import { Store } from '../../Store';
 import { getError, BASE_URL } from '../../utils';
 import { LoadingSpinner, MessageInformation } from '../../components';
+import useAxios from '../../security/useAxios';
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -38,6 +40,8 @@ const reducer = (state, action) => {
   };
 export default function Structures() {
     const navigate = useNavigate();
+    
+    const { axiosInstance, accessToken, refreshToken, setAccessToken, setRefreshToken } = useAxios();
 
     const { state } = useContext(Store);
     const { userInfo } = state;
@@ -52,9 +56,9 @@ export default function Structures() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-            const { data } = await axios.get(
+            const { data } = await axiosInstance.get(
                 `${BASE_URL}/structures`, {
-                headers: { Authorization: `Bearer ${userInfo.user.token}` },
+                headers: { Authorization: `Bearer ${accessToken}` },
                 });
             dispatch({ type: 'FETCH_SUCCESS', payload: data });
             toast.success(data.message);
@@ -70,14 +74,14 @@ export default function Structures() {
         } else {
             fetchData();
         }
-        }, [successDelete]);
+        }, [successDelete, accessToken]);
 
     const deleteHandler = async (structure) => {
         if (window.confirm('Are you sure you want to delete?')) {
             try {
             dispatch({ type: 'DELETE_REQUEST' });
-            const {data} = await axios.delete(`${BASE_URL}/structures/${structure._id}`, {
-                headers: { Authorization: `Bearer ${userInfo.user.token}` },
+            const {data} = await axiosInstance.delete(`${BASE_URL}/structures/${structure._id}`, {
+                headers: { Authorization: `Bearer ${accessToken}` },
             });
             dispatch({ type: 'DELETE_SUCCESS', payload: data });
             toast.success(data.message);
