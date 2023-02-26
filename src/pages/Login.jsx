@@ -31,6 +31,8 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    // const [selectedValue, setSelectedValue] = useState("email");
+
     const [{ loginStatus, error }, dispatch] = useReducer(reducer, {
     error: '',
     });
@@ -42,7 +44,7 @@ export default function Login() {
         e.preventDefault();
         try {
             dispatch({ type: 'SIGN_REQUEST' });
-            const { data } = await Axios.post(`${BASE_URL}/users/signin`, {
+            const { data } = await Axios.post(`${BASE_URL}/auth/login`, {
             email,
             password,
             });
@@ -52,12 +54,13 @@ export default function Login() {
             
             dispatch({ type: 'SIGN_SUCCESS', payload: data });
 
-            toast.success(data.message);
+            toast.success("Login Success");
 
             navigate(redirect || '/');
 
          } catch (err) {
           dispatch({ type: 'SIGN_FAIL', payload: getError(err), });
+          console.log(err)
         }
     };
 
@@ -108,6 +111,39 @@ export default function Login() {
              />
         </div>
 
+        {/* In Case I need to send verification code during login process */}
+        {/* <div className="flex flex-wrap">
+
+          <div className="w-full md:w-1/2 mb-4 md:pr-2">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="emailverification">
+              Email Verification
+            </label>
+            <input
+                type="radio"
+                name="radio-group"
+                id="emailverification"
+                value="email"
+                checked={selectedValue === "email"}
+                onChange={(e) => setSelectedValue(e.target.value)}
+              />
+          </div>
+
+          <div className="w-full md:w-1/2 mb-4 md:pl-2">
+            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="textverification">
+              Text Verification
+            </label>
+            <input
+                type="radio"
+                name="radio-group"
+                id="textverification"
+                value="text"
+                checked={selectedValue === "text"}
+                onChange={(e) => setSelectedValue(e.target.value)}
+              />
+          </div>
+
+        </div> */}
+
         <div className="mb-4">
             <button className="bg-green-900 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" >
                 Login
@@ -116,6 +152,12 @@ export default function Login() {
         <p className="text-sm font-semibold mt-2 pt-1 mb-0">
             New user?{' '}
             <Link to={`/register?redirect=${redirect}`}>Create your account</Link>
+        </p>
+
+        <p className="text-sm font-semibold mt-2 pt-1 mb-0">
+          <Link to={`/forgot-password`}>
+          Forgot Password?
+          </Link>
         </p>
 
         </form>

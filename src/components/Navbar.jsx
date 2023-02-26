@@ -40,7 +40,7 @@ const signoutHandler = () => {
             <Link to={`${nav.link}`}>{nav.title}</Link>
           </li>
         ))}
-        {userInfo?.user?.accessToken && decodedUser?.isAdmin && (
+        {userInfo?.user?.accessToken && decodedUser?.isadmin && (
           <li className={`font-sans font-normal cursor-pointer text-[16px] text-white ml-10`}>
             <Link
               to="/manage/dashboard"

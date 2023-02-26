@@ -27,9 +27,9 @@ export default function Register() {
     const redirectInUrl = new URLSearchParams(search).get('redirect');
     const redirect = redirectInUrl ? redirectInUrl : '/welcome';
 
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [mobileNumber, setMobileNumber] = useState('');
+    const [firstname, setFirstName] = useState('');
+    const [lastname, setLastName] = useState('');
+    const [mobilenumber, setMobileNumber] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -46,10 +46,10 @@ export default function Register() {
           
           try {
           dispatch({ type: 'SIGNUP_REQUEST' });
-          const { data } = await Axios.post(`${BASE_URL}/users/signup`, {
-              firstName,
-              lastName,
-              mobileNumber,
+          const { data } = await Axios.post(`${BASE_URL}/auth/register`, {
+              firstname,
+              lastname,
+              mobilenumber,
               email,
               password,
           });
@@ -58,7 +58,7 @@ export default function Register() {
 
           dispatch({ type: 'SIGNUP_SUCCESS', payload: data });
 
-          toast.success(data.message);
+          toast.success(data.data);
 
           navigate(redirect || '/');
 

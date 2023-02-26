@@ -18,7 +18,10 @@ import { Register,
         Partners, 
         Pages, 
         CreateStructure,
-        ViewStructure } from "./pages";
+        ViewStructure, 
+        ActivateAccount,
+        ForgotPassword,
+        PasswordReset} from "./pages";
 import ProtectedRoute from "./security/protectedRoute";
 
 const App = () => (
@@ -41,7 +44,10 @@ const App = () => (
 
             {/* Dynamic */}
             <Route path="/register" element={<Register/>} />
+            <Route path="/activate-account/:activationToken" element={<ActivateAccount/>} />
             <Route path="/login" element={<Login/>} />
+            <Route path="/forgot-password" element={<ForgotPassword/>} />
+            <Route path="/password-reset/:resetToken" element={<PasswordReset/>} />
             <Route path="/structure/:slug" element={<ViewStructure/>} />
 
             {/* Protected */}

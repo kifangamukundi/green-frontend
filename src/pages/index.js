@@ -14,6 +14,9 @@ import Settings from "./settings/Settings";
 import Partners from "./partners/Partners";
 import Pages from "./pages/Pages";
 import ViewStructure from "./structures/ViewStructure";
+import ActivateAccount from "./ActivateAccount";
+import ForgotPassword from "./ForgotPassword";
+import PasswordReset from "./PasswordReset";
 
 
 
@@ -24,6 +27,9 @@ export {
     CenterManagement,
     Example,
     Register,
+    ActivateAccount,
+    ForgotPassword,
+    PasswordReset,
     Login,
     Dashboard,
     Structures,
